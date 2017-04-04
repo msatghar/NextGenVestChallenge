@@ -1,18 +1,30 @@
-<form class="form-horizontal">
+<form class="form-horizontal" autocomplete="off" > 
+  <div class="form-group">
+    <label for="loanType">Loan Option:</label>
+    <select ng-model="loanType"  ng-change="updateForm(loanType)" data-ng-options="loan as loan.name for loan in loanTypes" name="loanType" id="loanType" required="true">
+      <option value = "">Select Loan Type</option>
+    </select>
+    {{loanList}}
+  </div>
   <div class="form-group">
     <label for="amount">Loan Amount:</label>
-    <input type="number" ng-model="amount" name="amount" id="amount">
+    <input type="number" ng-model="amount" name="amount" id="amount" required="true">
   </div>
   <div class="form-group">
     <label for="interest">Interest Rate:</label>
-    <input type="number" step="0.01" ng-model="interest" name="interest" id="interest">
+    <input type="number" step="0.01" ng-model="interest" name="interest" id="interest" required="true">
+    <small class=" alert alert-info text-muted hidden" ng-bind = "roi" id="roiTxt"></small>
   </div>
   <div class="form-group">
     <label for="period">Loan Period (in months):</label>
-    <input type="number" ng-model="period" name="period" id="period">
+    <input type="number" ng-model="period" name="period" id="period" required="true">
   </div>
   <button ng-click="makeChart()">Submit</button>
 </form>
-
+<div class = "alert alert-info hidden" id = "infoDiv">
+<p ng-bind = "emi"></p>
+<p ng-bind = "total"></p>
+<p ng-bind = "totalInterest"></p>
+</div>
 <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series">
 </canvas>
