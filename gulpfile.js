@@ -16,25 +16,14 @@ gulp.task("sass", () => {
         .pipe(gulpSASS())
         .pipe(concatenate("styles-from-sass.min.css"))
         .pipe(autoPrefix())
-        //.pipe(cleanCSS())
+        .pipe(cleanCSS())
         .pipe(gulp.dest("./public/css/"));
 });
 
-gulp.task("css", () => {
-    gulp
-        .src(cssFiles)
-        .pipe(concatenate("styles.min.css"))
-        .pipe(autoPrefix())
-        .pipe(cleanCSS())
-        .pipe(gulp.dest("./public/css/"));
-})
-
-
 gulp.task("watch", () => {
-    gulp.watch(cssFiles, ["css"]);
     gulp.watch(sassFiles, ["sass"]);
 });
 
 gulp.task("default", ["watch"]);
 
-gulp.task("build", ["sass", "css"]);
+gulp.task("build", ["sass"]);

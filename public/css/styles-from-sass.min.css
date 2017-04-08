@@ -1,8 +1,1 @@
-* {
-  box-sizing: border-box; }
-
-body, html {
-  background: #FEFEFE;
-  color: #333;
-  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: 20pt; }
+*{box-sizing:border-box}body,html{background:#fefefe;color:#333;font-size:15pt;padding:20px}#roiTxt{margin-top:30px}

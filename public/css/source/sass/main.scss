@@ -1,7 +1,7 @@
 $body-background: #FEFEFE;
 $primary-color: #333;
 
-$primary-font-size: 20pt;
+$primary-font-size: 15pt;
 
 * {
     box-sizing: border-box;
@@ -10,7 +10,10 @@ $primary-font-size: 20pt;
 body, html {
     background: $body-background;
     color: $primary-color;
-
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: $primary-font-size;
+    padding: 20px;
+}
+
+#roiTxt {
+    margin-top: 30px;
 }
